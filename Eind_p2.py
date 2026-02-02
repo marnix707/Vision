@@ -4,7 +4,7 @@ import numpy as np
 # --- INSTELLINGEN ---
 MIN_AREA = 500  # Negeer kleine ruis
 
-img = cv.imread(r"media\Image__1.bmp")
+img = cv.imread(r"media\Image_2.bmp")
 if img is None:
     print("Error loading image")
     exit()
