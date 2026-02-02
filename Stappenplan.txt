@@ -1,0 +1,19 @@
+Acquisitie:
+    vaste opstelling, egale achtergrond, diffuse belichting
+
+Enhancement:
+    Gaussian blur
+    sharpening
+    Histogram + evt. CLAHE
+
+Segmentatie:
+    HSV kleursegmentatie
+    thresholding
+    Canny edges
+    contourdetectie
+
+Feature extractie:
+    aspect ratio, circulariteit, HuMomenten, contour area
+
+Classificatie:
+    eenvoudige regels OF SVM classifier

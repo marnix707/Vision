@@ -1,0 +1,39 @@
+import numpy as np
+import cv2 as cv
+from matplotlib import pyplot as plt
+
+print("OpenCV version:", cv.__version__)
+print("NumPy version:", np.__version__)
+print("Opening image...")
+
+img = cv.imread("media\Image__1.bmp")
+
+if img is None:
+    print("Error: Could not load image!")
+    exit()
+
+# Matplotlib verwacht RGB → dus converteren
+img_rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
+
+kernel = np.array([
+    [-1, -1, -1],
+    [-1,  8, -1],
+    [-1, -1, -1]
+], dtype=np.float32)
+
+sharp = cv.filter2D(img, -1, kernel)
+
+# Resultaten laten zien
+plt.figure(figsize=(12, 8))
+
+plt.subplot(2, 2, 1)
+plt.imshow(img_rgb)
+plt.title("Origineel")
+plt.axis("off")
+
+plt.subplot(2, 2, 2)
+plt.imshow(sharp)
+plt.title("Filtered Image")
+plt.axis("off")
+
+plt.show()
